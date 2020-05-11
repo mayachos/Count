@@ -21,21 +21,41 @@ class ViewController: UIViewController {
     @IBAction func plus() {
         number = number + 1
         label.text = String(number)
+        chengeColor(number: number)
     }
     
     @IBAction func minus() {
         number = number - 1
         label.text = String(number)
+        chengeColor(number: number)
     }
     
     @IBAction func mult() {
         number = number * 10
         label.text = String(number)
+        chengeColor(number: number)
     }
     
     @IBAction func div() {
         number = number / 10
         label.text = String(number)
+        chengeColor(number: number)
+    }
+    
+    @IBAction func clear() {
+        number = 0
+        label.text = String(number)
+        chengeColor(number: number)
+    }
+    
+    func chengeColor(number: Int) {
+        if number >= 10 {
+            label.textColor = UIColor.red
+        } else if number <= -10 {
+            label.textColor = UIColor.blue
+        } else {
+            label.textColor = UIColor.black
+        }
     }
 
 }
